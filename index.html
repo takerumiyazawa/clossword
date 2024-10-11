@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5x5 クロスワードゲーム</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- クロスワード -->
+    <div class="crossword-container">
+        <table id="crossword">
+            <tr>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-0-0" readonly></td>
+                <td><input type="text" maxlength="1" id="cell-0-1"></td>
+                <td><input type="text" maxlength="1" id="cell-0-2"></td>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-0-3" readonly></td>
+                <td><input type="text" maxlength="1" id="cell-0-4"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" id="cell-1-0"></td>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-1-1" readonly></td>
+                <td><input type="text" maxlength="1" id="cell-1-2"></td>
+                <td><input type="text" maxlength="1" id="cell-1-3"></td>
+                <td><input type="text" maxlength="1" id="cell-1-4"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" id="cell-2-0"></td>
+                <td><input type="text" maxlength="1" id="cell-2-1"></td>
+                <td><input type="text" maxlength="1" id="cell-2-2"></td>
+                <td><input type="text" maxlength="1" id="cell-2-3"></td>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-2-4" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" id="cell-3-0"></td>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-3-1" readonly></td>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-3-2" readonly></td>
+                <td><input type="text" maxlength="1" id="cell-3-3"></td>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-3-4" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" class="disabled" id="cell-4-0" readonly></td>
+                <td><input type="text" maxlength="1" id="cell-4-1"></td>
+                <td><input type="text" maxlength="1" id="cell-4-2"></td>
+                <td><input type="text" maxlength="1" id="cell-4-3"></td>
+                <td><input type="text" maxlength="1" id="cell-4-4"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 入力セクション -->
+    <div class="input-section">
+        <div class="flex-container">
+            <div class="input-column">
+                <label for="input-col-0">列 0:</label>
+                <input type="text" id="input-col-0" maxlength="3" placeholder="3文字を入力">
+
+                <label for="input-col-1">列 1:</label>
+                <input type="text" id="input-col-1" maxlength="0" placeholder="入力不可" disabled>
+
+                <label for="input-col-2">列 2:</label>
+                <input type="text" id="input-col-2" maxlength="5" placeholder="5文字を入力">
+
+                <label for="input-col-3">列 3:</label>
+                <input type="text" id="input-col-3" maxlength="4" placeholder="4文字を入力">
+
+                <label for="input-col-4">列 4:</label>
+                <input type="text" id="input-col-4" maxlength="2" placeholder="2文字を入力">
+            </div>
+
+            <div class="input-row">
+                <label for="input-row-0">行 0:</label>
+                <input type="text" id="input-row-0" maxlength="5" placeholder="5文字を入力">
+
+                <label for="input-row-1">行 1:</label>
+                <input type="text" id="input-row-1" maxlength="5" placeholder="入力不可" disabled>
+
+                <label for="input-row-2">行 2:</label>
+                <input type="text" id="input-row-2" maxlength="5" placeholder="5文字を入力">
+
+                <label for="input-row-3">行 3:</label>
+                <input type="text" id="input-row-3" maxlength="5" placeholder="入力不可" disabled>
+
+                <label for="input-row-4">行 4:</label>
+                <input type="text" id="input-row-4" maxlength="5" placeholder="5文字を入力">
+            </div>
+        </div>
+
+        <button class="check-btn" onclick="insertColumn()">クロスワードに入力</button>
+        <button class="check-btn" onclick="checkAnswers()">正誤判定</button>
+    </div>
+</div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
