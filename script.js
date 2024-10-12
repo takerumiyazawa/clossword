@@ -91,10 +91,47 @@ function checkAnswers() {
             if (userInput === correctAnswers[row][col]) {
                 document.getElementById(cellId).classList.add('correct');
                 document.getElementById(cellId).classList.remove('incorrect');
-            } else  {
+            } else {
                 document.getElementById(cellId).classList.add('incorrect');
                 document.getElementById(cellId).classList.remove('correct');
             }
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    function initializeCarousel(carouselContainerId, prevBtnId, nextBtnId) {
+        const carouselContainer = document.getElementById(carouselContainerId);
+        const carouselInputs = carouselContainer.querySelectorAll('.carousel-input');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const offset = -index * 100;
+            carouselInputs.forEach(input => {
+                input.style.transform = `translateX(${offset}%)`;
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % 5;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + carouselInputs.length) % carouselInputs.length;
+            showSlide(currentIndex);
+        }
+
+        document.getElementById(nextBtnId).addEventListener('click', nextSlide);
+        document.getElementById(prevBtnId).addEventListener('click', prevSlide);
+
+        // スライダーの初期化
+        showSlide(currentIndex);
+    }
+
+    // 1つ目のカルーセルを初期化
+    initializeCarousel('carousel-container-1', 'prevBtn1', 'nextBtn1');
+
+    // 2つ目のカルーセルを初期化
+    initializeCarousel('carousel-container-2', 'prevBtn2', 'nextBtn2');
+});
