@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+     /*  display: flex; */
+     gap: 20px;
+     font-family: Arial, sans-serif;
+     display: flex;
+     /* justify-content: center; */
+     padding-top: 10%;
+     align-items: center;
+     
+     background-color: #f0f0f0;
+     flex-flow: column;
+}
+
+.crossword-container {
+    display: inline-block;
+    border: 2px solid #333;
+    padding: 10px;
+    background-color: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 240px !important;
+}
+
+table td {
+    width: 20%;
+    height: 2.1px;
+    border: 2px solid #333;
+    text-align: center;
+    padding: 0;
+}
+
+input[type="text"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 100%;
+    /* height: 100%; */
+    border: 2px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    background-color: #e0e0ff;
+}
+
+.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+.correct {
+    background-color: #d4edda; /* 正解の場合の色 (緑) */
+}
+
+.incorrect {
+    background-color: #ffb7bd; /* 間違いの場合の色 (赤) */
+}
+
+.check-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.check-btn:hover {
+    background-color: #555;
+}
+
+/* 入力セクションのスタイル */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-section input {
+    padding: 5px;
+    font-size: 16px;
+    width: 120px;
+}
+
+label {
+    font-size: 14px;
+}
+
+.flex-container {
+    display: flex;
+    gap: 20px; /* 横の間隔を設定 */
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-input {
+    margin-bottom: 10px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: darkgrey;
+    align-items: center;
+    flex-flow: column;
+}
+.headertext {
+    font-size: 1.2rem;
+    line-height: 100px;
+    margin: 0;
+}
+
+table td input {
+    border-radius: 0px !important;
+    aspect-ratio: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#nextbtn{
+    background-color: #333;
+}
+
+
+
+
+.carousel-input{
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 100% !important;
+    /* height: 100%; */
+    border: 2px!important; 
+    text-align: center !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}

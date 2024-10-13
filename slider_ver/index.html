@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- マス -->
+        <div class="crossword-container">
+            <table id="crossword">
+                <tr>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-0-0" readonly></td>
+                    <td><input type="text" maxlength="1" id="cell-0-1"></td>
+                    <td><input type="text" maxlength="1" id="cell-0-2"></td>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-0-3" readonly></td>
+                    <td><input type="text" maxlength="1" id="cell-0-4"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" id="cell-1-0"></td>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-1-1" readonly></td>
+                    <td><input type="text" maxlength="1" id="cell-1-2"></td>
+                    <td><input type="text" maxlength="1" id="cell-1-3"></td>
+                    <td><input type="text" maxlength="1" id="cell-1-4"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" id="cell-2-0"></td>
+                    <td><input type="text" maxlength="1" id="cell-2-1"></td>
+                    <td><input type="text" maxlength="1" id="cell-2-2"></td>
+                    <td><input type="text" maxlength="1" id="cell-2-3"></td>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-2-4" readonly></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" id="cell-3-0"></td>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-3-1" readonly></td>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-3-2" readonly></td>
+                    <td><input type="text" maxlength="1" id="cell-3-3"></td>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-3-4" readonly></td>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" class="disabled" id="cell-4-0" readonly></td>
+                    <td><input type="text" maxlength="1" id="cell-4-1"></td>
+                    <td><input type="text" maxlength="1" id="cell-4-2"></td>
+                    <td><input type="text" maxlength="1" id="cell-4-3"></td>
+                    <td><input type="text" maxlength="1" id="cell-4-4"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!--縦のマスの入力-->
+        <div class="carousel-container" id="carousel-container-1">
+            <button id="prevBtn1">前へ</button>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <h3>メキシコで食べられるトルティーヤという薄いパンにお肉や野菜をはさんで食べる料理は？</h3 >
+                    <input type="text" class="carousel-input" id="input-col-0" maxlength="3" placeholder="三文字入力">
+                </div>
+                <div class="carousel-item">
+                    <h3>次へを押してください</h3>
+                    <input type="text" class="carousel-input" id="input-col-1" maxlength="0" readonly placeholder="入力不可">
+                </div>
+                <div class="carousel-item">
+                    <h3>平安時代などの貴族の間で流行った玉遊びは？</h3>
+                    <input type="text" class="carousel-input" id="input-col-2" maxlength="3" placeholder="三文字入力">
+                </div>
+                <div class="carousel-item">
+                    <h3>〇〇〇〇気候 〇〇〇〇に入るホッキョクグマなどが住む気候は？</h3>
+                    <input type="text" class="carousel-input" id="input-col-3" maxlength="4" placeholder="四文字入力">
+
+                </div>
+                <div class="carousel-item">
+                    <h3>「〇〇とぐら」〇〇に入るある絵本のキャラクターは？</h3>
+                    <input type="text" class="carousel-input" id="input-col-4" maxlength="5" placeholder="二文字入力">
+                </div>
+            </div>
+            <button id="nextBtn1">次へ</button>
+        </div>
+
+        <!--横のマスの入力-->
+        <div class="carousel-container" id="carousel-container-2">
+            <button id="prevBtn2">前へ</button>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <h3>20歳以上が飲めるアルコールの入った飲み物は？</h3>
+                    <input type="text" class="carousel-input" id="input-row-0" maxlength="2" placeholder="二文字入力">
+                    
+                </div>
+                <div class="carousel-item">
+                    <h3>次へを押してください</h3>
+                    <input type="text" class="carousel-input" id="input-row-1" maxlength="5" readonly
+                        placeholder="入力不可">
+                    
+                </div>
+                <div class="carousel-item">
+                     <h3> 自転車の後ろ側の車輪のことを何というか   </h3>
+                    <input type="text" class="carousel-input" id="input-row-2" maxlength="5" placeholder="五文字入力">
+                   
+                </div>
+                <div class="carousel-item">
+                    <h3>次へを押してください</h3>
+                    <input type="text" class="carousel-input" id="input-row-3" maxlength="5" readonly placeholder="入力不可 ">
+                    
+                </div>
+                <div class="carousel-item">
+                         <h3>〇〇〇〇しゃ 遊園地にある車輪上の乗り物は？</h3>
+                    <input type="text" class="carousel-input" id="input-row-4" maxlength="4" placeholder="四文字入力">
+                   
+                </div>
+            </div>
+            <button id="nextBtn2">次へ</button>
+        </div>
+
+        <button class="check-btn" onclick="insertColumn()">クロスワードに入力</button>
+        <button class="check-btn" onclick="checkAnswers()">正誤判定</button>
+    </div>
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>
