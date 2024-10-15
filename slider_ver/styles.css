@@ -11,7 +11,7 @@ body {
      /* justify-content: center; */
      padding-top: 10%;
      align-items: center;
-     
+     height: 895px;
      background-color: #f0f0f0;
      flex-flow: column;
 }
@@ -66,6 +66,8 @@ input[type="text"]:focus {
 }
 
 .check-btn {
+    position: relative;
+    top: 10px;
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
@@ -110,7 +112,7 @@ label {
 
 .flex-container {
     display: flex;
-    gap: 20px; /* 横の間隔を設定 */
+    /* gap: 20px; 横の間隔を設定 */
 }
 
 .carousel-container {
@@ -122,6 +124,8 @@ label {
     display: flex;
     overflow: hidden;
     width: 300px;
+    /* background: #333; */
+    height: 125px;
 }
 
 .carousel-item {
@@ -164,13 +168,18 @@ table td input {
 
 
 
-.carousel-input{
+.carousel-input {
     -webkit-appearance: none !important;
     appearance: none !important;
     width: 100% !important;
     /* height: 100%; */
-    border: 2px!important; 
+    border: 2px !important;
     text-align: center !important;
     font-size: 18px !important;
     font-weight: bold !important;
+    position: absolute;
+    top: 102px;
 }
+
+
+
