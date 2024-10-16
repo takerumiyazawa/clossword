@@ -1,44 +1,42 @@
 // 正解のクロスワード（ひらがな）
 const correctAnswers = [
-    ['あ', 'さ', 'け', 'え', 'ぐ'],
-    ['た', 'き', 'ま', 'ぱ', 'り'],
-    ['こ', 'う', 'り', 'ん', 'そ'],
-    ['す', 'ち', 'つ', 'ど', 'あ'],
-    ['な', 'か', 'ん', 'ら', 'ん']
+    ['　', 'こ', 'う', 'だ', 'い'],
+    ['め', 'い', 'げ', 'ん', '　'],
+    ['ん', '　', '　', 'ち', 'り'],
+    ['き', 'が', 'ん', '　', 'ね'],
+    ['ょ', 'か', '　', 'き', 'ん']
 ];
 
 // 有効なセル（1）にのみ入力を反映
 const validCells = [
-    [false, true, true, false, true],
-    [true, false, true, true, true],
+    [false, true, true, true, true],
     [true, true, true, true, false],
-    [true, false, false, true, false],
-    [false, true, true, true, true]
+    [true, false, false, true, true],
+    [true, true, true, false, true],
+    [true, true, false, true, true]
 ];
 
 // 最大文字数
-const maxCharCount = [3, 0, 5, 4, 2];
-const maxRowCharCount = [2, 5, 4, 5, 4];
+const maxCharCount = [4, 2, 0, 0, 3];
+const maxRowCharCount = [4, 4, 2, 3, 2];
 
 // 各列の開始行を指定
-const startRow = [1, 1, 0, 1, 0];
+const startRow = [1, 3, 0, 0, 2];
 // 各行の開始列を指定
-const startCol = [1, 0, 0, 0, 1];
+const startCol = [1, 0, 3, 0, 3];
 
 // キーワードのためのセル指定
 const specialCells = [
-    [0, 1], 
-    [2, 3], 
-    [0, 4], 
-    [4, 3], 
-    [3, 0] 
+    [1, 0], 
+    [3, 1], 
+    [3, 4]
 ];
 
 // 列ごとの入力内容をクロスワードに反映する関数
 function insertColumn() {
     for (let col = 0; col < 5; col++) {
-        // 列1はスキップ
-        if (col === 1) {
+        // 列2,3はスキップ
+        if (col === 2 || col===3) {
             continue;
         }
 
@@ -64,10 +62,6 @@ function insertColumn() {
 
     // 行ごとの入力をクロスワードに反映
     for (let row = 0; row < 5; row++) {
-        if (row === 1 || row === 3) {
-            continue;
-        }
-
         const inputElement = document.getElementById(`input-row-${row}`);
         const inputValue = inputElement.value;
 
@@ -113,7 +107,7 @@ function checkAnswers() {
     }
 
     // 特定の5つのセルがすべて正解ならcorrect.htmlにリダイレクト
-    if (specialCorrectCount === 5) {
+    if (specialCorrectCount === 3) {
         window.location.href = 'correct.html';
     }
 }
