@@ -1,7 +1,7 @@
 // 正解のクロスワード（ひらがな）
 const correctAnswers = [
     ['あ', 'さ', 'け', 'え', 'ぐ'],
-    ['た', 'き', 'ま', 'つ', 'り'],
+    ['た', 'き', 'ま', 'ぱ', 'り'],
     ['こ', 'う', 'り', 'ん', 'そ'],
     ['す', 'ち', 'つ', 'ど', 'あ'],
     ['な', 'か', 'ん', 'ら', 'ん']
@@ -24,6 +24,15 @@ const maxRowCharCount = [2, 5, 4, 5, 4];
 const startRow = [1, 1, 0, 1, 0];
 // 各行の開始列を指定
 const startCol = [1, 0, 0, 0, 1];
+
+// キーワードのためのセル指定
+const specialCells = [
+    [0, 1], 
+    [2, 3], 
+    [0, 4], 
+    [4, 3], 
+    [3, 0] 
+];
 
 // 列ごとの入力内容をクロスワードに反映する関数
 function insertColumn() {
@@ -82,27 +91,45 @@ function insertColumn() {
 
 // 正誤判定を行う関数
 function checkAnswers() {
+    let correctCount = 0;
+    let specialCorrectCount = 0;
+
     for (let row = 0; row < 5; row++) {
         for (let col = 0; col < 5; col++) {
-            const cellId = `cell-${row}-${col}`;
-            const userInput = document.getElementById(cellId).value;
-
-            // disabled なセルはスキップ
-            if (!validCells[row][col]) {
-                continue;
-            }
-
-            if (userInput === correctAnswers[row][col]) {
-                document.getElementById(cellId).classList.add('correct');
-                document.getElementById(cellId).classList.remove('incorrect');
+            let input = document.getElementById(`cell-${row}-${col}`);
+            if (!validCells[row][col]) continue;
+            if (input.value === correctAnswers[row][col]) {
+                input.classList.add('correct');
+                input.classList.remove('incorrect');
+                correctCount++;// 特定のセルが正解しているか確認
+                if (isSpecialCell(row, col)) {
+                    specialCorrectCount++;
+                }
             } else {
-                document.getElementById(cellId).classList.add('incorrect');
-                document.getElementById(cellId).classList.remove('correct');
+                input.classList.add('incorrect');
+                input.classList.remove('correct');
             }
         }
     }
+
+    // 特定の5つのセルがすべて正解ならcorrect.htmlにリダイレクト
+    if (specialCorrectCount === 5) {
+        window.location.href = 'correct.html';
+    }
 }
 
+// 特定のセルかどうかを判定する関数
+function isSpecialCell(row, col) {
+    for (let i = 0; i < specialCells.length; i++) {
+        if (specialCells[i][0] === row && specialCells[i][1] === col) {
+            return true;
+        }
+    }
+    return false;
+}   
+
+
+//スライド
 document.addEventListener('DOMContentLoaded', function() {
     function initializeCarousel(carouselContainerId, prevBtnId, nextBtnId) {
         const carouselContainer = document.getElementById(carouselContainerId);
