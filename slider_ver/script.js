@@ -55,6 +55,10 @@ function insertColumn() {
 
     // 行ごとの入力をクロスワードに反映
     for (let row = 0; row < 5; row++) {
+        if (row === 1 || row === 3) {
+            continue;
+        }
+
         const inputElement = document.getElementById(`input-row-${row}`);
         const inputValue = inputElement.value;
 
